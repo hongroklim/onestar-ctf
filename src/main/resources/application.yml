@@ -1,0 +1,36 @@
+server:
+  port: 8080
+  tomcat:
+    basedir: .
+    accesslog:
+      enabled: true
+      directory: ./log
+      prefix: access
+      suffix: .log
+      pattern: '%{yyyy-MM-dd HH:mm:ss}t %s "%r" %h %l %u %b'
+
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: 'jdbc:h2:~/.h2/onestarctf'
+    username: sa
+    hikari:
+      maximum-pool-size: 10
+      read-only: true
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+mybatis:
+  mapper-locations: mappers/**/*.xml
+  type-aliases-package: bob.rokong.onestarctf.vo
+  configuration:
+    map-underscore-to-camel-case: true
+    default-fetch-size: 100
+    default-statement-timeout: 30
+
+ctf:
+  flag1: BoB12_1STAR{YOU_DID_IT_YOU_MADE_IT}
+  aesKey: 01234567890123456789012345678901

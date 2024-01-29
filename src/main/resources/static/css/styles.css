@@ -1,0 +1,254 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0 auto;
+    padding: 15px;
+    max-width: 450px;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    color: #000;
+    margin: 15px;
+}
+
+h2 {
+    color: #000;
+    margin: 10px;
+}
+
+p {
+    margin: 0;
+}
+
+span {
+    margin-right: 5px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 5px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+}
+
+li > a {
+    padding: 10px;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    word-break: keep-all;
+    font-size: 0.8em;
+}
+
+th {
+    text-align: center;
+}
+
+thead {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+td > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    padding: 8px;
+}
+
+body > div {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+pre {
+    overflow: auto;
+    background: #333333;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: white;
+    padding: 10px;
+}
+
+#index_title {
+    text-align: center;
+}
+
+#index_title img {
+    height: 1em;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+div#post_content {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    line-height: 1.6;
+    font-size: 0.8em;
+    word-break: keep-all;
+}
+
+#login_container form {
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.nav_bar {
+    background-color: #333;
+    padding: 10px;
+}
+
+.nav_bar * {
+    padding: 5px 10px;
+    margin: 0 5px;
+    color: white;
+}
+
+.nav_bar span {
+    font-weight: bold;
+}
+
+.nav_bar a {
+    text-decoration: none;
+}
+
+.nav_bar a:hover {
+    text-decoration: underline;
+}
+
+.info-message {
+    width: 100%;
+    text-align: center;
+    color: #6abd6a;
+    background: green;
+    border-radius: 4px;
+    padding: 2px;
+}
+
+.error-message {
+    width: 100%;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 7.5px;
+    margin: 30px 0;
+}
+
+.grid-container .label {
+    font-weight: bold;
+}
+
+.input_group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.input_group > label:first-child {
+    width: 100px;
+}
+
+.input_group input[type="hidden"] {
+    display: none;
+}
+
+.input_group select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.input_group input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.input_group input:last-child {
+    margin-right: 0;
+}
+
+
+.input_group input[readonly] {
+    background-color: #f0f0f0;
+    color: #333;
+    cursor: not-allowed;
+}
+
+.checkbox_group {
+    margin-bottom: 20px;
+}
+
+.checkbox_group input {
+    vertical-align: middle;
+}
+
+.checkbox_group > label {
+    padding: 10px;
+    background: #ddd;
+    margin-right: 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    font-size: 0.8em;
+}
+
+.btn_group {
+    text-align: center;
+}

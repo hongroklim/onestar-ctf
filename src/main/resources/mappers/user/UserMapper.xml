@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bob.rokong.onestarctf.dao.user">
+    <select id="selectUserByUsername" parameterType="String" resultType="UserVO">
+        SELECT /* bob.rokong.onestarctf.dao.user.selectUserByUsername */
+               uid
+             , username
+             , password
+             , role
+             , blocked_yn
+          FROM USER_M
+         WHERE 1=1
+           AND username = #{username}
+    </select>
+</mapper>

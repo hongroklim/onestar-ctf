@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bob.rokong.onestarctf.dao.post">
+    <select id="selectRecentNotices" parameterType="int" resultType="PostVO">
+        SELECT /* bob.rokong.onestarctf.dao.post.selectRecentNotices */
+               pid
+             , title
+          FROM POST_M
+         WHERE 1=1
+           AND category = 'NOTICE'
+           AND public_yn = 'Y'
+         ORDER BY pid
+    </select>
+
+    <select id="selectPosts" parameterType="ViewParamVO" resultType="PostVO">
+        SELECT /* bob.rokong.onestarctf.dao.post.selectPosts */
+               p.pid
+             , p.category
+             , p.title
+             , u.username
+          FROM POST_M p
+             , USER_M u
+         WHERE 1=1
+           AND p.author_uid = u.uid
+        <if test='keyword != null and !"".equals(keyword)'>
+            <choose>
+                <when test='"title".equals(keywordOption)'>
+                    AND title LIKE '%' || #{keyword} || '%'
+                </when>
+                <when test='"author".equals(keywordOption)'>
+                    AND author_uid in
+                        (SELECT uid
+                           FROM USER_M
+                          WHERE username LIKE '%' || #{keyword} || '%'
+                        )
+                </when>
+                <when test='"content".equals(keywordOption)'>
+                    AND content LIKE '%' || #{keyword} || '%'
+                </when>
+            </choose>
+        </if>
+        <if test='categories != null and !"".equals(categories)'>
+            AND category in ${categories}
+        </if>
+    </select>
+
+    <select id="selectPostByPid" parameterType="int" resultType="PostVO">
+        SELECT /* bob.rokong.onestarctf.dao.post.selectPostByPid */
+               p.pid
+             , p.category
+             , p.title
+             , p.author_uid
+             , p.datetime
+             , p.content
+             , p.public_yn
+             , u.username
+          FROM POST_M p
+             , USER_M u
+         WHERE 1=1
+           AND p.author_uid = u.uid
+           AND pid = #{pid}
+    </select>
+</mapper>
